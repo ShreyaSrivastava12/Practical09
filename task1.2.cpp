@@ -1,43 +1,38 @@
 #include<iostream>
 #include<string>
 using namespace std;
+#define MAX 100
 class student
 {
-  private:
-  int rollno;
-  long int phoneno;
-  string name;
-  string address;
-  
-  public:
-  void getdata();
-  void displaydata();
+	private:
+		string name;
+		int age;
+	    int year;
+		char sec;
+	public:
+		void getdata();
+		void putdata();
 };
 void student::getdata()
 {
-   cout<<"Enter name:";
-   cin>>name;
-   cout<<"Enter rollno:";
-   cin>>rollno;
-   cout<<"Enter phoneno:";
-   cin>>phoneno;
-   cout<<"Enter address:";
-   cin>>address;
-}
-void student::displaydata()
-{
-    cout<<"Name is"<<name<<endl;
-    cout<<"Rollno is:"<<rollno<<endl;
-    cout<<"phoneno is"<<phoneno<<endl;
-    cout<<"address is:"<<address<<endl;
+	cout<<"enter name ";
+	cin>>name;
+	cout<<"enter age ";
+	cin>>age;
+	cout<<"enter year ";
+	cin>>year;
+	cout<<"enter section ";
+	cin>>sec;
 }
 int main()
 {
-  student s1;
-  student s2;
-  s1.getdata();
-  s2.getdata();
-  cout<<"Student's data are:"<<endl;
-  s1.displaydata();
-  s2.displaydata();
+	student s[MAX];
+	int i=0,n=0,count=0;
+	do{
+	count++;
+	s[i++].getdata();
+	cout<<"if you want to continue enter 1";
+	cin>>n;
+	}while(n!=0);
+	cout<<"total number of students in college are "<<count;	
 }
