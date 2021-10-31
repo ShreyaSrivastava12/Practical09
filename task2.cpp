@@ -1,24 +1,32 @@
 #include<iostream>
 using namespace std;
-class test
+class area
 {
-	private:
-		static int count;
-		public:
-			test()
-			{
-				count++;
-			}
-			static int objcount()
-			{
-				return count;
-			}
+  int length,breadth,side;
+ 
+  public:
+  area (int s);
+  area(int l,int b);
 };
-int test::count;
+
+area::area(int s)
+{
+  this->side=s;
+  cout<<"The area of square is:"<<(side*side)<<endl;
+}
+area::area(int l,int b)
+{
+  this->length=l;
+  this->breadth=b;
+  cout<<"The area of rectangle is:"<<(length*breadth)<<endl;
+}
 int main()
 {
-	test obj1,obj2,obj3;
-	int cnt;
-	cnt=test::objcount();
-	cout<<"Number of objects:"<<cnt;
-}
+  int s,l,b;
+  cout<<"Enter side of a square:";
+  cin>>s;
+  cout<<"Enter length and breadth of a rectangle:";
+  cin>>l>>b;
+  area a1=area(s);
+  area a2=area(l,b);
+  }
